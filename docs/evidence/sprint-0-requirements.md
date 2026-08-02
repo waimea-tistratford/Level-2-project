@@ -54,34 +54,34 @@ this will insure the best use of the app without any issues
 
 ### Impact / Considerations
 
-i will test the links and buttons to make sure that the site runs as intended
+i will test the links and buttons to make sure that the site runs as intended and repeat it over the making of the app/website
 
 
 
-## NAME OF IMPLICATION 4
+## Future Proofing
 
-Replace this text with a clear explanation of what the implication means.
-
-### Relevance to the System
-
-Replace this text with an explanation of why the implication is relevant to this particular project.
-
-### Impact / Considerations
-
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this implication.
-
-
-
-## NAME OF IMPLICATION 5
-
-Replace this text with a clear explanation of what the implication means.
+Is the website ready to adapt when new data or features are added
 
 ### Relevance to the System
 
-Replace this text with an explanation of why the implication is relevant to this particular project.
+this will allow new recipies for future nights and features like a filter to be added
 
 ### Impact / Considerations
 
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this implication.
+I will apply this implication via a modular system in both the list of recipies and bodies fpr seperate features
+
+
+
+## End User
+
+To ensure that the website is suitable for all who use it not the designer
+
+### Relevance to the System
+
+if the website does not suit the taste of at least 3 people then they might not use it which removes its usefullness
+
+### Impact / Considerations
+
+I will check in with the end user/users to make sure they are happy with the end product and if they have any improvements
 
 

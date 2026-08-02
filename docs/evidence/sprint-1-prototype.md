@@ -25,25 +25,24 @@ Develop a design for the database and a UI prototype that simulates the key func
 
 ## Initial Database Design
 
-Replace this text with notes regarding the DB design.
+I have made a schema with 3 three seperate tables including a shopping list a ingredients list and a recipe list. all of these will be made to fit the end user
 
-![DB Design](screenshots/placeholder.png)
-
+![Schema](screenshots/schema_recipe.png)
 
 ### Required Data Input
 
-Replace this text with a description of what data will be input, and where / how it will be obtained.
+the data for the recipe list will include 4 seperate inputs, first is the ingredients, then the qauntity then the units, name and finally the instructions. the shopping list will obtain data through the ingredients that are missing or have_it = 0
 
 ### Required Data Output
 
-Replace this text with a description of the outputs for the system - what types of data will be displayed?
+the data that will be displayed will include ingredients, qauntity and units, and instructions. these willl be shown on 2 differing "tables" the shopping list and recipe boook
 
 ### Required Data Processing
 
 Replace this text with a description of how the data will be processed to achieve the desired output(s) - any processes / formulae?
 
 
-## UI 'Flow'
+## UI 'Flow' 
 
 The first stage of prototyping was to explore how the UI might 'flow' between states, based on the required functionality.
 
