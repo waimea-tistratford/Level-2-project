@@ -1,0 +1,20 @@
+{% extends 'pages/_base.jinja' %}
+
+{% block content %}
+
+    <section id="recipes">
+
+        <h1>Choose a Recipe</h1>
+
+        {% for recipe in recipes %}  
+
+            <div class="recipe">
+                <h2>{{recipe.name}}</h2>
+                <p>Instructions: {{ recipe.instructions }}</p>
+            </div>
+
+        {% endfor%}
+
+    </section>
+
+{% endblock%}

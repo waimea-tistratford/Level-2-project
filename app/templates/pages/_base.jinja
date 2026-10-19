@@ -11,9 +11,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Notes Demo {% block title %}{% endblock %}</title>
+	<title>Recipe Book {% block title %}{% endblock %}</title>
 
-    <link rel="icon" href="/static/images/note.svg">
+    <link rel="icon" href="/static/images/book.png">
 
     <script src="/static/js/utils.js"></script>
 
@@ -25,14 +25,17 @@
 <body>
 
     <header>
-        <a href="/">
-            Notes Demo
-        </a>
+        
+            Recipe Book
 
         <nav>
-            <a href="/">All Notes</a>
-            <a href="/">Link</a>
-            <a href="/">Link</a>
+            <a href="/">
+                <img src="/static/images/list.png" alt="List Icon" class="link">
+            </a>
+            <a href="/shopping">
+                <img src="/static/images/shopping.png" alt="Shopping Icon" class="link">
+            </a>
+            
         </nav>
     </header>
 

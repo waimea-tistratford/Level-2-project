@@ -1,0 +1,44 @@
+{#=====================================================
+  Home page
+=====================================================#}
+
+{% extends 'pages/_base.jinja' %}
+
+{% block content %}
+
+<section id="days">
+
+    {% set seen_days = [] %}
+
+    {% for day in days %}
+        {% if day.id not in seen_days %}
+            {% set _ = seen_days.append(day.id) %}
+
+            <div class="day">
+                <h2>{{ day.d_name }}</h2>
+                <div class="line"></div>
+
+                {% if day.recipe_id %}
+                    <h3>{{ day.r_name }}</h3>
+
+                  <div class="ingredients">
+                    {% for ingredient in days %}
+                      {% if ingredient.recipe_id == day.recipe_id and ingredient.i_name %}
+                        <h4>{{ ingredient.i_name }}</h4>
+                       {% endif %}
+                    {% endfor %}
+                  </div>
+                {% else %}
+                    <a href="/day/recipe?day={{ day.id }}">
+                        <img src="/static/images/plus.png"
+                             alt="Plus Icon"
+                             class="icon">
+                    </a>
+                {% endif %}
+            </div>
+        {% endif %}
+    {% endfor %}
+
+</section>
+
+{% endblock %}
