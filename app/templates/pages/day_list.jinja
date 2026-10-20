@@ -8,11 +8,11 @@
 
 <section id="days">
 
-    {% set seen_days = [] %}
+    {% set chosen_days = [] %}
 
     {% for day in days %}
-        {% if day.id not in seen_days %}
-            {% set _ = seen_days.append(day.id) %}
+        {% if day.id not in chosen_days %}
+            {% set _ = chosen_days.append(day.id) %}
 
             <div class="day">
                 <h2>{{ day.d_name }}</h2>

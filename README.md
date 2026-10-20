@@ -4,14 +4,17 @@ by Troy Stratford
 
 ## Project Description
 
-This is an app that ...
+This is an app that keeps track on the recipes of the week and puts ingredients you dont have into a shopping list
 
 The app has the following key features:
-- Feature one
-- Feature two
-- Feature three
+- recipes for the week
+- shopping list
+- adding and choosing recipes
 - ...
 
+## Live Site
+
+    https://level-2-project.onrender.com
 
 ## Supporting Documents
 

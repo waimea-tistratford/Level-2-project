@@ -31,7 +31,6 @@ def show_recipes():
             days.`name` AS d_name,
             days.recipe_id,
             recipes.`name` AS r_name,
-            recipes.instructions,
             ingredients.`name` AS i_name,
             ingredients.recipe_id AS i_id
 
@@ -59,16 +58,43 @@ def get_recipes():
 
     with connect_db() as db:
         sql = """
-            SELECT id, name, instructions
-            FROM recipes  
-            ORDER BY name DESC
+            SELECT
+                recipes.id AS r_id,
+                recipes.name AS r_name,
+                ingredients.id AS i_id,
+                ingredients.name AS i_name
+            FROM recipes
+            LEFT JOIN ingredients
+                ON ingredients.recipe_id = recipes.id
+            ORDER BY recipes.name DESC
         """
-        params = ()
-        recipes = db.execute(sql, params).fetchall()
 
-        return render_template("pages/recipe_select.jinja", recipe=recipes, day=day)        
+        rows = db.execute(sql).fetchall()
 
+    # Group ingredients under each recipe
+    recipes_dict = {}
 
+    for row in rows:
+        r_id = row["r_id"]
+
+        if r_id not in recipes_dict:
+            recipes_dict[r_id] = {
+                "id": r_id,
+                "name": row["r_name"],
+                "ingredients": []
+            }
+
+        if row["i_id"] is not None:
+            recipes_dict[r_id]["ingredients"].append(row["i_name"])
+
+    recipes = list(recipes_dict.values())
+
+    return render_template(
+        "pages/recipe_select.jinja",
+        recipes=recipes,
+        day=day
+    )
+    
 @app.get("/shopping")
 def show_shoppinglist():
     with connect_db() as db:

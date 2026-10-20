@@ -3,18 +3,22 @@
 {% block content %}
 
     <section id="recipes">
-
         <h1>Choose a Recipe</h1>
 
-        {% for recipe in recipes %}  
-
+        {% for recipe in recipes %}
             <div class="recipe">
-                <h2>{{recipe.name}}</h2>
-                <p>Instructions: {{ recipe.instructions }}</p>
+                <h2>{{ recipe.name }}</h2>
+                <div class="ingredients">
+                    {% for ingredient in recipe.ingredients %}
+                        <h4>{{ ingredient }}</h4>
+                    {% else %}
+                        <h4>No ingredients listed</h4>
+                    {% endfor %}
+                </div>
             </div>
-
-        {% endfor%}
-
+        {% else %}
+            <p>No recipes found.</p>
+        {% endfor %}
     </section>
 
-{% endblock%}
+{% endblock %}
