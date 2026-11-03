@@ -1,24 +1,79 @@
+
+
 {% extends 'pages/_base.jinja' %}
 
 {% block content %}
 
+    <h1>Choose a Recipe</h1>
+
     <section id="recipes">
-        <h1>Choose a Recipe</h1>
 
         {% for recipe in recipes %}
             <div class="recipe">
-                <h2>{{ recipe.name }}</h2>
-                <div class="ingredients">
-                    {% for ingredient in recipe.ingredients %}
-                        <h4>{{ ingredient }}</h4>
-                    {% else %}
-                        <h4>No ingredients listed</h4>
-                    {% endfor %}
-                </div>
+
+                <form action="{{ url_for('assign_day_recipe') }}" method="POST">
+                    <input type="hidden" name="day" value="{{ day }}">
+                    <input type="hidden" name="recipe_id" value="{{ recipe.id }}">
+
+                    <button type="submit" class="recipe-button">
+                        <h2>{{ recipe.name }}</h2>
+
+                        <div class="ingredients">
+                            {% for ingredient in recipe.ingredients %}
+                                <h4>{{ ingredient }}</h4>
+                            {% else %}
+                                <h4>No ingredients listed</h4>
+                            {% endfor %}
+                        </div>
+                    </button>
+                </form>
+                <div class="delete">  
+                    <form action="{{ url_for('delete_a_recipe', id=recipe.id) }}" method="POST">
+                        <button type="submit">Delete recipe</button>
+                    </form>
+                </div>  
+
             </div>
+
         {% else %}
             <p>No recipes found.</p>
         {% endfor %}
+
+    </section>
+
+    <section id="add_recipe">
+
+        <form method="POST" action="/recipe/new">
+
+            <label>
+                Name
+                <input type="text" name="name" required>
+            </label>
+
+            <div id="ingredients">
+                <input type="text" name="ingredients" placeholder="Ingredient" required>
+            </div>
+
+            <button type="button" id="add-ingredient">
+                + Add ingredient
+            </button>
+
+            <button type="submit">Add recipe</button>
+
+        </form>
+
+        <script>
+            document.getElementById("add-ingredient").onclick = function () {
+                const input = document.createElement("input");
+                input.name = "ingredients";
+                input.placeholder = "Another ingredient";
+                input.required = true;
+
+                document.getElementById("ingredients").appendChild(input);
+            };
+        </script>
+
     </section>
 
 {% endblock %}
+

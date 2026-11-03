@@ -1,4 +1,4 @@
-# ... Project
+# Recipe traker Project
 
 by Troy Stratford
 
@@ -10,13 +10,14 @@ The app has the following key features:
 - recipes for the week
 - shopping list
 - adding and choosing recipes
-- ...
 
 ## Live Site
 
     https://level-2-project.onrender.com
 
 ## Supporting Documents
+
+*For easier reading, the docs are hosted as a [GH Pages site](https://waimea-tistratford.github.io/Level-2-project/)*
 
 Task Instructions:
 - [Instruction documents](docs/instructions/)
@@ -50,8 +51,6 @@ Test User 2:
 - [Python](https://www.python.org/) as the programming language used
 - [SQLite](https://sqlite.org/) for the database
 - [Jinja2](https://jinja.palletsprojects.com/templates/) for page templating
-
-*For easier reading, the docs are hosted as a [GH Pages site](https://waimea-tistratford.github.io/Level-2-project/)*
 
 
 ## Project Structure

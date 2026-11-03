@@ -4,17 +4,29 @@
 
 {% extends 'pages/_base.jinja' %}
 
-
 {% block content %}
 
-    <section id="shopping">
-      
-      <div class="list">
-        This is a placeholder for the shopping lists
-      </div>
+  <h2>Shopping List</h2>  
 
-    </section>
+<section id="shopping">
 
+    <div class="list">
+
+        {% for ingredient in ingredients %}
+          <div class="ingredient">
+              <h4>{{ ingredient["name"] }}</h4>
+
+              <form method="POST" action="/shopping/delete/{{ ingredient['id'] }}">
+                  <button type="submit">Remove</button>
+              </form>
+          </div>
+        {% else %}
+          <h4>Empty</h4>
+        {% endfor %}
+
+    </div>
+
+</section>
 
 {% endblock %}
 

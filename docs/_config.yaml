@@ -1,7 +1,7 @@
-title: Flask Project Template
-description: A starter Flask, Jinja and SQLite project
-author: Digital Technologies Dept.
+title: Recipe book
+description: Keeps track of recipes and days assigned with them,along-side the ingredients needed
+author: Troy Stratford
 
 # If development is true, guides will be shown
-development: true
+development: false
 picotheme: azure
